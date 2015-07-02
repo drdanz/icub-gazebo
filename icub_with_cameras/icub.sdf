@@ -1548,7 +1548,7 @@
       </visual>
       <sensor name='imu_sensor' type='imu'>
         <always_on>1</always_on>
-        <update_rate>100</update_rate>
+        <update_rate>1000</update_rate>
         <visualize>1</visualize>
         <imu/>
         <plugin name='iCub_yarp_gazebo_plugin_IMU' filename='libgazebo_yarp_imu.so'>
@@ -1560,10 +1560,11 @@
       <sensor name="left_camera" type="camera">
         <pose>-0.07 -0.108 -0.034 1.5708 3.1415 0</pose>
         <camera>
-          <horizontal_fov>1.5708</horizontal_fov>
+          <horizontal_fov>1.8326</horizontal_fov>
+          <projection_type>orthographic</projection_type>
           <image>
-            <width>320</width>
-            <height>240</height>
+            <width>640</width>
+            <height>480</height>
           </image>
           <clip>
             <near>0.1</near>
@@ -1571,20 +1572,21 @@
           </clip>
         </camera>
         <always_on>1</always_on>
-        <update_rate>30</update_rate>
+        <update_rate>300</update_rate>
         <visualize>true</visualize>
         <plugin filename="libgazebo_yarp_camera.so" name="left_camera_plugin">
-            <yarpConfigurationFile>model://yarp_camera/left_camera.ini</yarpConfigurationFile>
+            <yarpConfigurationFile>model://icub_with_cameras/left_camera.ini</yarpConfigurationFile>
         </plugin>
       </sensor> 
 
       <sensor name="right_camera" type="camera">
         <pose>-0.07 -0.108 0.034 1.5708 3.1415 0</pose>
         <camera>
-          <horizontal_fov>1.5708</horizontal_fov>
+          <horizontal_fov>1.8326</horizontal_fov>
+          <projection_type>orthographic</projection_type>
           <image>
-            <width>320</width>
-            <height>240</height>
+            <width>640</width>
+            <height>480</height>
           </image>
           <clip>
             <near>0.1</near>
@@ -1592,10 +1594,10 @@
           </clip>
         </camera>
         <always_on>1</always_on>
-        <update_rate>30</update_rate>
-        <visualize>true</visualize>
+        <update_rate>300</update_rate>
+        <visualize>false</visualize>
         <plugin filename="libgazebo_yarp_camera.so" name="right_camera_plugin">
-            <yarpConfigurationFile>model://yarp_camera/right_camera.ini</yarpConfigurationFile>
+            <yarpConfigurationFile>model://icub_with_cameras/right_camera.ini</yarpConfigurationFile>
         </plugin>
       </sensor>
 
